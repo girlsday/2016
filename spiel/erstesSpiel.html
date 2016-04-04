@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang=de>
+  <head>
+    <title>Mein erstes Onlinespiel</title>
+
+    <!-- das CSS -->
+    <style>
+      body {
+        background-color: Midnightblue;
+        cursor: url(lightsaber.png),auto;
+	color: white;
+      }
+      img {
+        width: 100px;
+        position: absolute;
+        top: 100px;
+        left: 100px;
+      }
+    </style>
+
+    <!-- Laden von jQuery -->
+    <script src="jquery.min.js"></script>
+
+    <!-- Der Programmierteil -->
+    <script>
+
+      // Globale Variable fuer die Stopuhr
+      var stopuhr;
+      
+      // Funktion zum (Weiter-)Spielen
+      var starteSpiel = function() {      
+
+        // alte stopuhr löschen (falls vorhanden), damit das Spiel nicht gestoppt wird
+        clearTimeout( stopuhr );      
+
+        // Vader an zufällige Stelle setzen
+        $("img")
+        .css("left", Math.random()*window.innerWidth/2)
+        .css("top", Math.random()*window.innerHeight/2);      
+
+        // aktuelle Stopuhr in Variablen speichern (nach 1000 Millisekunden Spiel stoppen)
+        stopuhr = setTimeout( function() { beendeSpiel() }, 1000 );      
+
+        // starte Sound
+        $("#sound")[0].play();
+    
+      }
+
+      // Funktion zum Beenden des Spiels
+      var beendeSpiel = function() {
+        // Vader wird riesig
+        $("img").animate({width:"10000px",top:"-5000px",left:"-5000px"}, "slow");
+
+        // ... und verschwindet nach einer Weile
+        setTimeout(function() { 
+          $("img").css("display", "none");
+          
+          // ... und mache den Sound nach einer Weile wieder aus
+	  setTimeout(function() {
+	    $("#sound")[0].pause();
+	  }, 800);
+
+	}, 600);
+      }
+      
+      // Diese Funktion wird ausgeführt nachdem die Webseite geladen ist
+      $(function() { 
+
+        // Funktion "starteSpiel" ausführen wenn Vader angeklickt wird
+        $("img").click(function() {
+          starteSpiel();
+        });
+
+      });
+    </script>
+    
+  </head>
+
+  <!-- Der Teil, der auf der Webseite angezeigt wird -->
+  <body>
+    Hallo, schlage mich schneller als alle 2 Sekunden, oder ich zerquetsche dich! 
+ 
+    <img src="vader.png">
+
+  <audio id="sound" loop>
+    <source src="lichtschwert.mp3" type="audio/mpeg">
+  </audio>
+  </body>
