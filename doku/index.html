@@ -87,396 +87,539 @@
 	
 	<section><!-- HTML -->
 	  <section>
-	    <h1>HTML</h1>
-	    <h3>Die Sprache des Internets</h1>
-<ul>	    
-  <li>Alle Seiten im Internet sind in HTML geschrieben.</li>
-  <li>HTML ist
-    eine <span class="em">Auszeichnungssprache</span>.</li>
-  <li>Ein Text besteht aus verschiedenen Bestandteilen wie z.B.</li>
-  <ul>
-    <li>Seitenkopf</li>
-    <li>Seitenkörper, z.B. mit
-      <ul>
-	<li>Titel</li>
-	<li>Paragraph mit Text</li>
-	<li>Bild</li>
-      </ul>
-    </li>
-  </ul>
-</ul>
-</section>
+	    <h2>HTML</h2>
+	    <h3>Die Sprache des Internets</h3>
+	    <ul>	    
+	      <li>Alle Seiten im Internet sind in HTML geschrieben.</li>
+	      <li>HTML ist
+		eine <span class="em">Auszeichnungssprache</span>.</li>
+	      <li>Ein Text besteht aus verschiedenen Bestandteilen wie z.B.</li>
+	      <ul>
+		<li>Seitenkopf</li>
+		<li>Seitenkörper, z.B. mit
+		  <ul>
+		    <li>Titel</li>
+		    <li>Paragraph mit Text</li>
+		    <li>Bild</li>
+		  </ul>
+		</li>
+	      </ul>
+	    </ul>
+	  </section>
+	  
+	  <section>
+	    <h3>Das HTML Grundgerüst</h3>
+	    <div style="text-align: left;">
+	      <span class="blue">&lt;!DOCTYPE html&gt;</span><br />
+	      <span class="blue">&lt;html lang=de&gt;</span><br />
+	      <span class="red">&nbsp;&nbsp;&lt;head&gt;</span><br />
+	      <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;</span>
+	      Hier kommt Admin-Kram hin: Seitentitel, Scripte, CSS
+	      <span class="red">&lt;/title&gt;</span><br />
+	      <span class="red">&nbsp;&nbsp;&lt;/head&gt;</span><br />
+	      <span class="green">&nbsp;&nbsp;&lt;body&gt;</span><br />
+	      &nbsp;&nbsp;&nbsp;&nbsp;
+	      Hier kommt das Zeug hin was man später auf der Webseite sieht</br>
+	      <span class="green">&nbsp;&nbsp;&lt;/body&gt;</span><br />
+	    </div>
+	  </section>
+	  <section>
+	    <h3>Das HTML für unser Spiel</h3>
+	    <div style="font-size: 60%; text-align: left;">
+	      <span class="blue">&lt;!DOCTYPE html&gt;</span><br />
+	      <span class="blue">&lt;html lang=de&gt;</span><br />
+	      <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;</span><br />
+	      <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="utf-8"&gt;</span><br />
+	      <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;</span>Mein erstes sebstgeschriebenes Spiel<span class="red">&lt;/title&gt;</span><br />
+	      <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script src="jquery.min.js"&gt;</span>
+	      &lt;!-- hier kommt Javascript und jQuery hin --&gt;
+	      <span class="red">&lt;/script&gt;</span><br />
+	      <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style&gt;</span>
+	      &lt;!-- hier kommt CSS hin --&gt;
+	      <span class="red">&lt;/style&gt;</span><br />
+	      <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;</span><br />
+	      <span class="green">&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;</span><br />
+	      <span class="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img id="vader" src="</span>vader.png<span class="green">"&gt;</span><br />
+	      <span class="green">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;</span><br />
+	      <span class="red">&lt;/html&gt;</span>
+	    </div>
+	  </section>
+	  
+	  <section>
+	    <h3>Ein paar Tags zum Rumspielen</h3>
+	    <div style="text-align:left">
+	      <span class="orange">&lt;p&gt;</span>
+	      Eigener TextText für den Abschnitt (Paragraphen)
+	      <span class="orange">&lt;p&gt;</span><br >
+	      <span class="orange">&lt;ul&gt;</span><br />
+	      &nbsp;&nbsp;<span class="orange">&lt;li&gt;</span>Listenelement 1<br />
+	      &nbsp;&nbsp;<span class="orange">&lt;li&gt;</span>Listenelement 2<br />
+	      &nbsp;&nbsp;<span class="orange">&lt;/ul&gt;</span><br />
+	      <span class="orange">&lt;img src="</span>bildname.jpg<span class="orange">"&gt;</span><br />
+	    </div>
+	  </section>
+	</section><!-- HTML -->
+	
+	
+	<section><!-- CSS -->
+	  <section>
+	    <h1>CSS</h1>
+	    <h3>Das Make-Up des Internets</h3>
+	    <p>HTML ist nur eine Auszeichnungssprache, das heißt es erzählt dem
+	      Browser nur "das ist eine Überschrift", und "das ist ein Text". Aber es sagt nicht wie diese Elemente auszusehen haben.</p>
+	    <p>Diesen Part übernimmt CSS.</p>
+	  </section>
+	  <section data-markdown>
+	    ## Mit CSS kann man sich die HTML-Tags schnappen und ändern
+	    z.B. den Hintergrund der Seite einfärben:
+	    ```
+	    body {
+	      background-color: lightblue;
+	    }
+	    ```
+	    Oder den Hintergrund des divs mit der id="snake"
+	    ```
+	    #snake {
+	      background-color: red; 
+	    }
+	    ```
+	  </section>
+	  <section data-markdown>
+	    <script type="text/template">
+	      ### Wo schreibt man das CSS hin?
+	      CSS kann zum Beispiel auf der Webseite stehen, eingeschlossen in die
+	      &lt;style&gt;-Tags: 
+	      ```
+	      <style>
+		body {
+		  background-color: lightblue;
+		}
+		#snake {
+  		  background-color: palegreen;
+		}
+	      </style>
+	      ```
+	    </script>
+	  </section>
+	  
+	  <section data-markdown>
+	    ### Etwas CSS zum rumspielen
+	    ```
+	    // Alle p-Tags
+	    p {
+	      background-color: red;
+	      font-style: italic;
+	      font-weight: bold;
+	    }
+	    // das p-Tag mit der ID "besonders" (&lt;p id="besonders"&gt;Besonderer Text&lt;/p&gt;)
+	    #besonders {
+	      font-size: 70%;
+	      color: blue;
+	    }
+	    ```
+	  </section>
+	</section><!-- CSS -->
+	
+	<section><!-- JavaScript -->
+	  <section>
+	    <h1>JavaScript</h1>
+	    <h3>Der Motor des Internets</h3>
+	    <p>Mit JavaScript können sich die (Web)Seiten verändern während man sie
+	      anschaut.</p>
+	    
+	    JavaScript schreibt man innerhalb des<br />
+	    <span class="blue">&lt;script&gt;&lt;/script&gt;</span></br />
+	    Tags.
+	  </section>
+	  
+	  <section>
+	    <h3>Funktionen einbinden</h3>
+	    Meist benutzt man eine sogenannte <span class="em">Library</span>  -  eine Sammlung
+	    von Funktionen in einer Datei. <br />
+	    Wenn man diese Datei in die eigene Webseite einbindet kann man deren Funktionen nutzen.<br />
+	  </section>
+	  <section>
+	    <h3>jQuery Einbinden</h3>
+	    jQuery ist eine der populärsten JavaScript-Libraries.<br />
+	    Nachdem man die jQuery-Datei aus dem Internet heruntergeladen hat
+	    kann man sie im Header seiner Webseite einbinden.<br />
+	    <span class="blue">&lt;script src="</span>jquery.min.js <span class="blue">"&gt;&lt;/script&gt;</span>
+	  </section>
+	  
+	  <section id="bugsection" >
+	    <style>
+	      #bugimg {
+              border: 0;
+              background: rgba(0,0,0,0);
+              margin: 0;
+              width: 100px;
+              box-shadow: none;
+              position: absolute;
+              top: 0;
+              left: 0;
+	      }
+	    </style>
+	    <script>
+	      $(document).keyup(function(event) {
+	      
+              if (Reveal.getCurrentSlide().id == "bugsection") {
+	      
+              var bugInterval = setInterval (function() {
+              $("#bugimg")
+              .css("left", Math.random()*window.innerWidth/2)
+              .css("top", Math.random()*window.innerHeight/2)
+              .css("transform","rotate("+Math.random()*360+"deg)");
+              }, 1000);
+	      
+              } else {
+              clearInterval(bugInterval);
+              }
+	      
+	      });
+	    </script><img id="bugimg" src="images/bug-b.svg">
+	    <h3>Das Wichtigste beim Programmieren</h3>
+	    <p>
+	      <span class="orange">Computer sind total pingelig!!!</span><br />
+	      Leerzeichen an der falschen Stelle oder ein Groß- statt eines Kleinbuchstaben kann das Programm kaputt machen.
+	    </p><p>
+	      Ein guter Teil der Zeit beim Programmieren geht mit <span class="orange">Debugging</span> drauf.
+	  </section>
+	  
+	  <section>
+	    <h3>Debugging bei der Webprogrammierung</h3>
+	    <p>Im Firefox-Menü unter "Entwicklerwerkzeuge" "Webkonsole" aufrufen.</p><p>
+	      Dann erscheint ein Fenster unter der Webseite in der man mit der Webseite interagiern (sprechen) kann.
+	  </section>
 
-<section>
-  <h3>Das HTML Grundgerüst</h3>
-  <div style="text-align: left;">
-    <span class="blue">&lt;!DOCTYPE html></span><br />
-<span class="blue">&lt;html lang=de></span><br />
-<span class="red">&nbsp;&nbsp;&lt;head></span><br />
-<span class="red">&nbsp;&nbsp;&nbsp;&nbsp;&lt;title></span>
-Hier kommt Admin-Kram hin: Seitentitel, Scripte, CSS
-<span class="red">&lt;/title></span><br />
-<span class="red">&nbsp;&nbsp;&lt;/head></span><br />
-<span class="green">&nbsp;&nbsp;&lt;body></span><br />
-&nbsp;&nbsp;&nbsp;&nbsp;
-Hier kommt das Zeug hin was man später auf der Webseite sieht</br>
-<span class="green">&nbsp;&nbsp;&lt;/body&gt;</span><br />
-</div>
-</section>
-<section>
-  <h3>Das HTML für unser Spiel</h3>
-  <div style="font-size: 60%; text-align: left;">
-    <span class="blue">&lt;!DOCTYPE html></span><br />
-    <span class="blue">&lt;html lang=de></span><br />
-    <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;&lt;head></span><br />
-    <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="utf-8"></span><br />
-    <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title></span>Mein erstes sebstgeschriebenes Spiel<span class="red">&lt;/title></span><br />
-    <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script src="jquery.min.js"></span>
-    &lt;!-- hier kommt Javascript und jQuery hin -->
-	  <span class="red">&lt;/script></span><br />
-	  <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;style></span>
-	  &lt;!-- hier kommt CSS hin -->
-	  <span class="red">&lt;/style></span><br />
-	  <span class="red">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/head></span><br />
-	  <span class="green">&nbsp;&nbsp;&nbsp;&nbsp;&lt;body></span><br />
-	  <span class="green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img id="snake" src="</span>snake.svg<span class="green">"></span><br />
-	  <span class="green">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body></span><br />
-	  <span class="red">&lt;/html></span>
-      </div>
-      </section>
+	  <section>
+	    <h3>Das Handwerkzeugs von jQuery <br />(und den meisten anderen Sprachen)</h3>
+	    <ul>
+	      <li>Werte können in <span class="orange">Variablen</span> gespeichert und verändert werden
+	      <li>Mit <span class="orange">Schleifen</span> können Aktionen mehrfach ausgeführt werden
+	      <li>Es können <span class="orange">entweder/oder Abfragen</span> gemacht werden
+	      <li>Es gibt <span class="orange">vordefinierte Funktionen</span>
+	      <li>Mehrere verschiedene Aktionen können in <span class="orange">Funktionen</span> zusammengefasst werden
+	    </ul>
+	  </section>
+	</section>
 
-      <section>
-	<h3>Ein paar Tags zum Rumspielen</h3>
-	<div style="text-align:left">
-	<span class="orange">&lt;p></span>Eigener TextText für den Abschnitt (Paragraphen)<span class="orange">&lt;p></span><br >
-	  <span class="orange">&lt;ul></span><br />
-	  &nbsp;&nbsp;<span class="orange">&lt;li></span>Listenelement 1<br />
-	  &nbsp;&nbsp;<span class="orange">&lt;li></span>Listenelement 2<br />
-	&nbsp;&nbsp;<span class="orange">&lt;/ul></span><br />
-	<span class="orange">&lt;img src="</span>bildname.jpg<span class="orange">"></span><br />
+	<section>
+	  <section>
+	    <h1>Vordefinierte Funktionen</h1>
+	    <h3>(zum Ausprobieren )</h3>
+	    <div style="text-align:left">
+	      <p><span class="orange">alert(</span>"Hallo Welt"<span class="orange">);</span></p>
+	      <p>1<span class="orange">+</span>3;</p>
+	    </div>
+	  </section>
+
+	  <section>
+	    <h3>Variable (zum Ausprobieren)</h3>
+	    <div style="text-align:left;">
+	      <span class="orange">var</span> ergebnis <span class="orange">=</span> 3;<br />
+	      <span class="orange">alert(</span>ergebnis<span class="orange">)</span>;<br />
+	      ergebnis <span class="orange">=</span> 5;<br />
+	      <span class="orange">alert(</span>ergebnis<span class="orange">)</span>;
+	    </div>
+	  </section>
+
+	  <section>
+	    <h3>Schleife (zum Ausprobieren)</h3>
+	    <div style="text-align:left">
+	      <span class="orange">for (</span>var i = 0; i < 3; i++<span class="orange">) {</span><br />
+							      <span class="orange">&nbsp;&nbsp;alert(</span>"Hallo, ich mache alles mehrfach"<span class="orange">);</span><br />
+							      <span class="orange">}</span>
+	    </div>
+	  </section>
+	  <section>
+	    <h3>Abfrage (zum Ausprobieren)</h3>
+	    <div style="text-align:left">
+	      <span class="orange">var</span> ergebnis = 1;<br />
+	      <span class="orange">if (</span>ergebnis == 1<span class="orange">) {</span><br />
+	      <span class="orange">&nbsp;&nbsp;alert(</span>"Stimmt!"<span class="orange">);</span><br />
+	      <span class="orange">} else {</span><br />
+	      <span class="orange">&nbsp;&nbsp;alert(</span>"Stimmt nicht!"<span class="orange">);</span><br />
+	      <span class="orange">}</span>
+	    </div>
+	  </section>
+	  
+	  <section>
+	    <h3>Funktion (zum Ausprobieren)</h3>
+	    <div style="text-align:left">
+	      <span class="green">var</span> sagsMir <span class="green">= function () {</span><br />
+	      <span class="green">&nbsp;&nbsp;var</span> ergebnis <span class="green">=</span> 1<span class="green">+</span>3;<br />
+	      <span class="green">&nbsp;&nbsp;alert(</span>"Ich sage"<span class="green">);</span><br />
+	      <span class="green">&nbsp;&nbsp;alert(</span>ergebnis<span class="green">);</span><br />
+	      <span class="green">}</span><br />
+	      sagsMir();
+	    </div>
+	  </section>
+	</section>
+
+	<section><!-- jQuery -->
+	  <section>
+	    <h1>jQuery</h1>
+	    <p>Stellt eine ganze Reihe nützlicher Funktionen zur Verfügung</p>
+	    <p>Vor allem zum Verändern von Seitenelementen</p>
+	  </section>
+
+	  <section data-markdown>
+	    ###Spezielle jQuery Funktionen
+	    ```
+	    $("p").css("background-color","blue");
+	    $("p").html("hallo Leute");
+	    $("p").append("
+	    Und hier kommt noch mehr Text
+	    ");
+	    ```
+	  </section>
+	  
+	  <section data-markdown>
+	    ###Ausführen nachdem alle Elemente geladen sind
+	    ```
+	    $(document).ready(function() {
+	    // Das hier wird getan nachdem die Seite geladen ist
+	    });
+	    ```
+	  </section>
+	</section>
+	<section><!-- Das Spiel -->
+	  <section>
+	    <h1>Beschreibung des Spiels</h1>
+	    <ul>
+	      <li>Darth Vader erscheint irgendwo auf dem Bildschirm.
+	      <li>Wenn er mit dem Lichtschwert in einer bestimmten Zeit geschlagen wird erscheint woanders wieder und das Spiel geht weiter
+	      <li>Wenn es nicht rechtzeitig geschlagen wird, gewinnt er und wird riesig
+	      <li><a href="../spiel/erstesSpiel.html">Zum Beispiel so:</a>
+	    </ul>
+	  </section>
+
+	  <section>
+	    <h1>Was brauchen wir? Die Basis</h1>
+	    <ul>
+	      <li>Das Bild von Darth Vader
+	      <li>Das Bild vom Lichtschwert als Cursor
+	      <li>Darth Vader an einer bestimmten Position
+	    </ul>
+	  </section>
+	  
+
+	  <section data-markdown>
+	    ### Das Bild (mit HTML):
+	    ```
+	    &lt;img src="vader.png" id="vader">
+		```
+	  </section>
+
+	  <section data-markdown>
+	    ### Der Cursor, Hintergund und Schriftfarbe (mit CSS)
+	    ```
+	    body {
+	    background-color: Midnightblue;
+	    cursor: url("lightsaber.png"),auto;
+	    color: white;
+	    }
+	    
+	    ```
+	  </section>
+
+	  <section data-markdown>
+	    ### Die Position von Vader mit jQuery setzen
+	    ```
+	    $("#vader").css({
+	      "top":"100px", 
+	      "left":"100px"
+	    });
+	    ```
+	  </section>
+
+	  <section data-markdown>
+	    ### Halt! Es soll ja ein zufälliger Ort auf dem Bildschirm sein!
+	    ```
+	    x-Wert: Math.random()*window.innerWidth/2
+	    y-Wert: Math.random()*window.innerHeight/2
+	    ```
+	  </section>
+	  <section data-markdown>
+	    ### und jetzt mit jQuery an zufälligen Ort setzen:
+	    ```
+	    $("#vader").css({
+	      "left": Math.random()*window.innerWidth/2,
+	      "top": Math.random()*window.innerHeight/2
+	    });
+	    ```
+	  </section>
+	</section>
+
+	<section>
+	  <section>
+	    <h3>Vader nach einer bestimmten Zeit woanders hinsetzen</h3>
+	    <pre>
+	      <code class="bash">
+		var spiele = function() {
+		
+		  // Vader versetzen
+		  $("#vader").css({
+		    "left": Math.random()*window.innerWidth/2,
+		    "top": Math.random()*window.innerHeight/2
+		  });
+		  
+		  // Funktion nach 1000 Millisekunden wieder aufrufen
+		  setTimeout( function() {
+		    spiele();
+		  }, 1000);
+
+		};
+	      </code>
+	    </pre>
+	  </section>
+
+	  <section>
+	    <p>
+	      Aber wir wollen Vader ja nur versetzen,
+	      wenn wir weniger als 1 Sekunde gebraucht haben um ihn zu schlagen!
+	    </p>
+	    <p>
+	      Also brauchen wir eine <span class="blue">Stopuhr</span>
+	    </p>
+	    <p>Die Stopuhr zählt runter.<br />
+	      Wenn Vader angeklickt wird wird sie neu gestartet und Vader versetzt, 
+	      ansonsten wird das Spiel beendet.
+	    </p>
+	  </section>
+
+	  <section>
+	    <pre>
+	      <code>
+		var stopuhr;
+		var spiele = function() {
+		  // Versetze Vader und starte Stopuhr neu
+		}
+		var beendeSpiel = function() {
+		  // Beende das Spiel
+		}
+	      </code>
+	    </pre>
+	  </section>
+
+	  <section>
+	    <h3>Funktion zum Spielen</h3>
+	    <pre>
+	      <code>
+		var stopuhr;
+
+		var spiele = function() {
+
+		  // Beende die alte Stopuhr (falls vorhanden)
+		  clearTimeout( stopuhr );
+
+		  // Versetze Vader
+  		  $("#vader").css({
+		    "left": Math.random()*window.innerWidth/2,
+		    "top": Math.random()*window.innerHeight/2
+		  });      
+		  // Starte Stopuhr neu
+		  stopuhr = setTimeout( function() { beendeSpiel }, 1000 );
+		}
+	      </code>
+	    </pre>
+	  </section>
+	  
+	  <section>
+	    <h3>Funktion zum Beenden des Spiels</h3>
+	    <pre>
+	      <code>
+		var beendeSpiel = function() {
+
+		  // lasse Vader verschwinden
+		  $("#vader").css({
+		    "visibility": "hidden"
+		  });
+
+		  // schreibe Meldung
+		  $("body").html("Du hast verloren!");
+		}
+	      </code>
+	    </pre>
+	  </section>
+
+	  <section>
+	    <h3>Spiel erst starten, wenn Vader das erste Mal angeklickt wird</h3>
+	    <pre>
+	      <code>
+		$("#vader").click( function() {
+		  spiele();
+		});
+	      </code>
+	    </pre>
+	  </section>
+
+	  <section id="smiley">
+	    <script>
+	      $(document).keyup(function(event) {
+                if (Reveal.getCurrentSlide().id == "smiley") {
+	          setTimeout(function() {
+	            $("#smileycon")
+	              .animate({
+	                "font-size":"8em"
+	              }, "slow")
+	          }, 500)
+	        }
+	      });
+	    </script>
+	    <h1>Viel Spaß beim Programmieren!</h1>
+	    <h3>Sibylle Nägle</h3>
+	    <h6 id="smileycon">:)</h6>
+
+	  </section>
+	</section>
+
+	<style>
+	  .moveRight {
+	  position: absolute;
+	  }
+	</style>
+	<script>
+	  $("h1:contains('JavaScript')").hover(function() {
+	  $(".moveRight").animate({ "marginLeft": "+500px"}, "slow");
+	  });
+	  $("h1:contains('JavaScript')").mouseleave(function() {
+	  $(".moveRight").animate({ "marginLeft": "-500px"}, "slow");
+	  });
+
+	</script><!-- Javascript -->
+
+
 	</div>
-      </section>
-</section><!-- HTML -->
-
-
-<section><!-- CSS -->
-  <section>
-    <h1>CSS</h1>
-    <h3>Das Make-Up des Internets</h3>
-    <p>HTML ist nur eine Auszeichnungssprache, das heißt es erzählt dem
-      Browser nur "das ist eine Überschrift", und "das ist ein Text". Aber es sagt nicht wie diese Elemente auszusehen haben.</p>
-    <p>Diesen Part übernimmt CSS.</p>
-  </section>
-  <section data-markdown>
-    ## Mit CSS kann man sich die HTML-Tags schnappen und ändern
-    z.B. den Hintergrund der Seite einfärben:
-    ```
-    body {
-    background-color: lightblue;
-    }
-    ```
-    Oder den Hintergrund des divs mit der id="snake"
-    ```
-    #snake {
-    background-color: red; 
-    }
-    ```
-  </section>
-  <section data-markdown>
-    <script type="text/template">
-      ## Wo schreibt man das css hin?
-      css kann zum Beispiel auf der Webseite stehen, eingeschlossen in die
-      &lt;style>-Tags: 
-      ```
-      <style>
-	body {
-	background-color: lightblue;
-	}
-	#snake {
-	background-color: palegreen;
-	}
-      </style>
-      ```
-    </script>
-  </section>
-
-  <section>
-    <h3>Etwas CSS zum rumspielen</h3>
-    <div style="text-align:left;font-size: 70%;">
-      <span class="orange">//</span> Alle p-Tags<br />
-      <span class="orange">p &nbsp;{</span><br />
-      <span class="orange">&nbsp;&nbsp;background-color:</span> red;<br />
-      <span class="orange">&nbsp;&nbsp;font-style:</span> italic;<br />
-      <span class="orange">&nbsp;&nbsp;font-weight:</span> bold;<br />
-      <span class="orange">}</span><br />
-      <span class="orange">//</span> das p-Tag mit der ID "besonders" (&lt;p id="besonders">Besonderer Text&lt;/p>)<br />
-      #besonders <span class="orange"> &nbsp;{</span><br />
-      <span class="orange">&nbsp;&nbsp;font-size:</span> 70%;<br />
-      <span class="orange">&nbsp;&nbsp;color:</span> blue;<br />
-      <span class="orange">}
       </div>
-  </section>
-</section><!-- CSS -->
 
 
-<section><!-- JavaScript -->
-  <section>
-    <h1>JavaScript</h1>
-    <h3>Der Motor des Internets</h3>
-    <p>Mit JavaScript können sich die (Web)Seiten verändern während man sie
-      anschaut.</p>
-    
-    JavaScript schreibt man innerhalb des<br />
-    <span class="blue">&lt;script&gt;&lt;/script&gt;</span></br />
-    Tags.
-  </section>
+      <script src="lib/js/head.min.js"></script>
+      <script src="js/reveal.min.js"></script>
 
-  <section>
-    <h3>Funktionen einbinden</h3>
-    Meist benutzt man eine sogenannte <span class="em">Library</span>  -  eine Sammlung
-    von Funktionen in einer Datei. <br />
-    Wenn man diese Datei in die eigene Webseite einbindet kann man deren Funktionen nutzen.<br />
-  </section>
-  <section>
-    <h3>jQuery Einbinden</h3>
-    jQuery ist eine der populärsten JavaScript-Libraries.<br />
-    Nachdem man die jQuery-Datei aus dem Internet heruntergeladen hat
-    kann man sie im Header seiner Webseite einbinden.<br />
-    <span class="blue">&lt;script src="</span>jquery.min.js <span class="blue">">&lt;/script></span>
-  </section>
-
-  <section>
-    <h1>Das Wichtigste beim Programmieren</h1>
-    <p>
-      <span class="orange">Computer sind total pingelig!!!</span><br />
-      Leerzeichen an der falschen Stelle oder ein Groß- statt eines Kleinbuchstaben kann das Programm kaputt machen
-    </p><p>
-      Ein guter Teil der Zeit beim Programmieren geht mit <span class="orange">Debugging</span> drauf
-  </section>
-
-  <section>
-    <h3>Debugging bei der Webprogrammierung</h3>
-    <p>Im Firefox-Menü unter "Entwicklerwerkzeuge" "Webkonsole" aufrufen.</p><p>
-      Dann erscheint ein Fenster unter der Webseite in der man mit der Webseite interagiern (sprechen) kann.
-  </section>
-
-  <section>
-    <h3>Das Handwerkzeugs von jQuery <br />(und den meisten anderen Sprachen)</h3>
-    <ul>
-      <li>Werte können in <span class="orange">Variablen</span> gespeichert und verändert werden
-      <li>Dinge passieren in <span class="orange">Schleifen</span>
-      <li>Es können <span class="orange">entweder/oder Abfragen</span> gemacht werden
-      <li>Es gibt <span class="orange">vordefinierte Funktionen</span>
-      <li>Mehrere Schritte können in eigenen <span class="orange">Funktionen</span> zusammengefasst werden
-    </ul>
-  </section>
-
-  <section>
-    <h3>Vordefinierte Funktionen</h3>
-    <div style="text-align:left">
-    <p><span class="orange">alert(</span>"Hallo Welt"<span class="orange">);</span></p>
-    <p>1<span class="orange">+</span>3;</p>
-    </div>
-  </section>
-
-  <section>
-    <h3>Variable</h3>
-    <div style="text-align:left;">
-      <span class="orange">var</span> ergebnis <span class="orange">=</span> 3;<br />
-      <span class="orange">alert(</span>ergebnis<span class="orange">)</span>;<br />
-      ergebnis <span class="orange">=</span> 5;<br />
-      <span class="orange">alert(</span>ergebnis<span class="orange">)</span>;
-    </div>
-  </section>
-
-  <section>
-    <h3>Schleife</h3>
-    <div style="text-align:left">
-      <span class="orange">for (</span>var i = 0; i < 3; i++<span class="orange">) {</span><br />
-      <span class="orange">&nbsp;&nbsp;alert(</span>"Hallo, ich nerve jetzt ein bischen"<span class="orange">);</span><br />
-      <span class="orange">}</span>
-    </div>
-  </section>
-  <section>
-    <h3>Abfrage</h3>
-    <div style="text-align:left">
-      <span class="orange">var</span> ergebnis = 1;<br />
-      <span class="orange">if (</span>ergebnis == 1<span class="orange">) {</span><br />
-      <span class="orange">&nbsp;&nbsp;alert(</span>"Stimmt!"<span class="orange">);</span><br />
-      <span class="orange">} else {</span><br />
-      <span class="orange">&nbsp;&nbsp;alert(</span>"Stimmt nicht!"<span class="orange">);</span><br />
-      <span class="orange">}</span>
-    </div>
-  </section>
-  
-  <section>
-    <h3>Funktion</h3>
-    <div style="text-align:left">
-    <span class="green">var</span> meldeDich <span class="green">= function () {</span><br />
-    <span class="green">&nbsp;&nbsp;var</span> ergebnis <span class="green">=</span> 1<span class="green">+</span>3;<br />
-    <span class="green">&nbsp;&nbsp;alert(</span>ergebnis<span class="green">);</span><br />
-    <span class="green">}</span><br />
-    meldeDich();
-    </div>
-  </section>
-</section>
-
-<section><!-- jQuery -->
-  <section>
-    <h1>jQuery</h1>
-    <p>Stellt eine ganze Reihe nützlicher Funktionen zur Verfügung</p>
-    <p>Vor allem zum Verändern von Seitenelementen</p>
-  </section>
-
-  <section>
-    <h3>Spezielle jQuery Funktionen</h3>
-    <div style="text-align:left">
-      $("p").css("background-color","blue");<br />
-      $("p").html("hallo Leute");<br />
-      $("p").append("<p>Und hier kommt noch mehr Text</p>");
-    </div>
-  </section>
-  
-  <section>
-    <h3>Ausführen nachdem alle Elemente geladen sind</h3>
-    <div style="text-align:left;">
-      <span class="red">&lt;script src="jquery.min.js"></span><br />
-&nbsp;&nbsp;$(function() {<br /><br />
-&nbsp;&nbsp;&nbsp;&nbsp;// Das hier wird getan nachdem die Seite geladen ist<br /><br />
-&nbsp;&nbsp;}<br />
-<span class="red">&lt;/script></span>
-
-</section>
-
-<section><!-- Das Spiel -->
-  <section>
-    <h1>Beschreibung</h1>
-    <ul>
-      <li>Ein Ding, z.B. eine Schlange erscheint irgendwo auf dem Bildschirm.
-      <li>Wenn es in einer bestimmten Zeit angeklickt wird erscheint woanders wieder und das Spiel geht weiter
-      <li>Wenn es nicht rechtzeitig angeklickt wird ist das Spiel aus
-      <li><a href="reaction-minimal.html">Zum Beispiel so:</a>
-    </ul>
-  </section>
-
-  <section>
-    <h1>Was brauchen wir?</h1>
-    <ul>
-      <li>Das Bild
-      <li>Checken, ob es innerhalb der Zeit angeklickt wurde
-      <li>Wenn ja:
-	<ul>
-	  <li>Bild versetzen
-	  <li>Zeit neu starten
-	</uL>
-      <li>Wenn nein, Spiel zuende
-    </ul>
-  </section>
-  
-
-  <section data-markdown>
-    ### Das Bild (mit HTML):
-    ```
-    &lt;img src="bilddatei.src" id="snake">
-    ```
-    ### An bestimmten Ort setzen (so würde man es mit css machen:)
-    ```
-    .schlange {
-    position: absolute;
-    top: 100px;
-    left: 100px;
-    }
-    
-    ```
-  </section>
-
-  <section data-markdown>
-    ### aber wir wollen die Posizion ja ändern können+
-    ###  die setzen wir also mit jQuery
-    ```
-    $("#snake").css("top","100px").css("left","100px");
-    ```
-  </section>
-  <section data-markdown>
-    ### Halt! Es soll ja ein zufälliger Ort auf dem Bildschirm sein!
-    ```
-    x-Wert: Math.random()*window.innerWidth/2
-    y-Wert: Math.random()*window.innerHeight/2
-    ```
-    ### und jetzt alles zusammen:
-    ```
-    $("#snake").css("top",Math.random()*window.innerHeight/2).css("left",innerWidth/2);
-    ```
-  </section>
-
-</section>
-
-
-<section><!-- Programmieren -->
-  
-
-  <section>
-    <h1>Das Spiel</h1>
-    <ul>
-      <li>Das Bild einer Schlange an einem zufälligen Ort</li>
-      <li>Verschwindet, wenn angeklickt</li>
-      <li>Wenn angeklickt war nach einer Sekunde woanders anzeigen</li>
-    </ul>
-  </section>
-  
-  <section>
-    <h1>Bild an zufälligem Ort</h1>
-    
-  </section>
-
-</section>
-
-<style>
-  .moveRight {
-  position: absolute;
-  }
-</style>
-<script>
-  $("h1:contains('JavaScript')").hover(function() {
-  $(".moveRight").animate({ "marginLeft": "+500px"}, "slow");
-  });
-  $("h1:contains('JavaScript')").mouseleave(function() {
-  $(".moveRight").animate({ "marginLeft": "-500px"}, "slow");
-  });
-
-</script><!-- Javascript -->
-
-
-</div>
-</div>
-
-
-<script src="lib/js/head.min.js"></script>
-<script src="js/reveal.min.js"></script>
-
-<script>
-  // Full list of configuration options available here:
-  // https://github.com/hakimel/reveal.js#configuration
-  Reveal.initialize({
-  controls: true,
-  progress: true,
-  history: true,
-  center: true,
-  theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-  transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
-  // Parallax scrolling
-  // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-  // parallaxBackgroundSize: '2100px 900px',
-  // Optional libraries used to extend on reveal.js
-  dependencies: [
-  { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-  { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-  { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-  { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-  { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-  { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-  ]
-  });
-</script>
-</body>
+      <script>
+	// Full list of configuration options available here:
+	// https://github.com/hakimel/reveal.js#configuration
+	Reveal.initialize({
+	controls: true,
+	progress: true,
+	history: true,
+	center: true,
+	theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+	transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+	// Parallax scrolling
+	// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+	// parallaxBackgroundSize: '2100px 900px',
+	// Optional libraries used to extend on reveal.js
+	dependencies: [
+	{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+	{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+	{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+	{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+	{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+	{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+	]
+	});
+      </script>
+  </body>
 </html>
